@@ -6,10 +6,6 @@
         </div>
         <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
         <script type="text/javascript" src="js/Chart.js"></script>
-            <?php
-            $get_id = $_GET['id'];
-            ?>
-        
         <script>
             $(document).ready(function(){
                 $.ajax({
