@@ -56,8 +56,9 @@
                 </tbody>
             </table>
         </div>
-        <?php require_once ('js.php'); ?>
-        <script src="js/datatables.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.19/js/jquery.dataTables.min.js"></script>
         <script>
             $(document).ready(function() {
                 $('#example').DataTable( {
