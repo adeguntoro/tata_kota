@@ -1,7 +1,8 @@
 <html>
     <head>
-        <body>
-            <div class="chart-container">
+    </head>
+    <body>
+        <div class="chart-container">
             <canvas id="mycanvas"></canvas>
         </div>
         <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
@@ -18,6 +19,5 @@
                 });
             });
         </script>
-        </body>
-    </head>
+    </body>
 </html>
