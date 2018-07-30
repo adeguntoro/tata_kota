@@ -54,23 +54,23 @@
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script>
-        $(document).ready(function(){
-            $('#tahun').on('change',function(){
-                var tahunID = $(this).val();
-                if(tahunID){
-                    $.ajax({
-                        type:'POST',
-                        url:'test2.php',
-                        data:'tahun='+tahunID,
-                        success:function(html){
-                            $('#gini-rasio').html(html);
-                        }
-                    }); 
-                } else {
-                    $('#kecamatan').html('<option value="">Select state first</option>'); 
+        function myFunction() {
+            var provinsi    = document.getElementById("provinsi").value;
+            var tahun       = document.getElementById("tahun").value;
+            console.log('provinsi id : '+ provinsi + ' dan tahun : '+tahun);
+            $.ajax({
+                type    : 'POST',
+                url     : 'test2.php',
+                data    : {
+                    tahun : tahun,
+                    id_prov : provinsi
+                },
+                success:function(html){
+                    $('#gini-rasio').html(html);
                 }
-            });
-        });
+            }); 
+
+        }
     </script>
     <script>
         // Source : http://jsfiddle.net/t8fdh/ and https://stackoverflow.com/questions/19731767/to-generate-years-automatically-in-javascript-dropdown
