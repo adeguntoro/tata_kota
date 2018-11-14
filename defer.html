@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/dataTables.bootstrap4.min.css">
+        <style>
+            .css-serial {
+                counter-reset: serial-number;
+            }
+
+            .css-serial td:first-child:before {
+                counter-increment: serial-number;
+                content: counter(serial-number);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <table id="example" class="display" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>Number</th>
+                        <th>ID District</th>
+                        <th>District Name</th>
+                        <th>Subdistrict Name</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+        <script src="js/jquery-3.3.1.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/datatables.min.js"></script>
+        <script>
+            $('#example').DataTable ({
+                ajax: {
+                    url     : "datatable_deffer.php",
+                    dataSrc : ""
+                },
+                columns: [
+                    { data: "id_kab" },
+                    { data: "kab_nama" },
+                    { data: "kec_nama" }
+                ],
+                deferRender: true,
+                responsive: true,
+                lengthMenu: [[5,10, 25, 50, -1], [5,10, 25, 50, "All"]]
+            });
+            
+            function addRowCount(tableAttr) {
+                $(tableAttr).each(function(){
+                    $('th:first-child, thead td:first-child', this).each(function(){
+                        var tag = $(this).prop('tagName');
+                        $(this).before('<'+tag+'>#</'+tag+'>');
+                    });
+                    $('td:first-child', this).each(function(i){
+                        $(this).before('<td>'+(i+1)+'</td>');
+                    });
+                });
+            }
+            addRowCount('.js-serial');
+        </script>
+    </body>
+</html>
