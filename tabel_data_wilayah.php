@@ -90,45 +90,6 @@
         <script src="assets/js/bootbox.min.js"></script>
         <script>
             $(document).ready(function(){
-                /*
-                $('.btn-hapus').click(function(){
-                    var hapus_data  = $(this).val(); //Value dari tombol hapus
-                    var el          = this;
-                    bootbox.dialog({
-                        title: "Hapus data gini",
-                        message: "Apakah anda ingin menghapus data IGI ?",
-                        buttons: {
-                            success: {
-                                label: "Tidak",
-                                className: "btn-success",
-                                callback: function() {
-                                    $('.bootbox').modal('hide');
-                                }
-                            },
-                            dialog: {
-                                label: "Hapus !",
-                                className: "btn-danger",
-                                callback: function() {
-                                    $.ajax({
-                                        url: 'hapus_igi.php',
-                                        type: 'POST',
-                                        data: { hapus : hapus_data }
-                                    }).done(function(response){
-                                        bootbox.alert(response);
-                                        $(el).closest('tr').fadeOut(100, function(){ //untuk menghapus / merefresh data yg telah dihapus dari tabel
-                                            $(this).remove();
-                                        });
-                                    }).fail(function(){
-                                        bootbox.alert('Error....');
-                                    })
-                                }
-                            }
-                        }, callback: function (result) {
-                            console.log('This was logged in the callback: ' + result);
-                        }
-                    });
-                });
-                */
                 $('#example').DataTable({
                     "lengthMenu": [[5, 10, 25, 50, -1], [5, 10, 25, 50, "All"]]
                 });
@@ -226,8 +187,6 @@
                     });
                 }
                 addRowCount('.js-serial');
-                
-                
             });
         </script>
     </body>
